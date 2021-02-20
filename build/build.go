@@ -559,7 +559,7 @@ func (b *Build) dockerPull(ctx context.Context, tag string, outWriter, errWriter
 		"--env", "HOME=" + homeDir,
 		// Make sure the container uses the correct docker daemon.
 		"--volume", "/var/run/docker.sock:/var/run/docker.sock",
-		"gcr.io/cloud-builders/docker",
+		"gcr.io/cloud-builders/docker:19.03.8",
 		"pull", tag}
 
 	var buf bytes.Buffer
@@ -652,7 +652,7 @@ func findStatus(s string) string {
 // retry and probabilistically eliminate the issue. See also b/29115558, a GCR
 // issue which seeks to address the problems we've identified.
 func (b *Build) dockerPushWithRetries(ctx context.Context, tag string, attempt int) (string, error) {
-	b.Log.WriteMainEntry(fmt.Sprintf("Pushing %s", tag))
+	b.Log.WriteMainEntry(fmt.Sprintf("Pushing andy %s", tag))
 
 	// Push from within a container with $HOME mounted.
 	args := []string{"docker", "run",
@@ -664,7 +664,7 @@ func (b *Build) dockerPushWithRetries(ctx context.Context, tag string, attempt i
 		"--env", "HOME=" + homeDir,
 		// Make sure the container uses the correct docker daemon.
 		"--volume", "/var/run/docker.sock:/var/run/docker.sock",
-		"gcr.io/cloud-builders/docker",
+		osImage,
 		"push", tag}
 
 	output, err := b.runWithScrapedLogging(ctx, "PUSH", args)
