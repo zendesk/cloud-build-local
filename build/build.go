@@ -652,7 +652,7 @@ func findStatus(s string) string {
 // retry and probabilistically eliminate the issue. See also b/29115558, a GCR
 // issue which seeks to address the problems we've identified.
 func (b *Build) dockerPushWithRetries(ctx context.Context, tag string, attempt int) (string, error) {
-	b.Log.WriteMainEntry(fmt.Sprintf("Pushing andy %s", tag))
+	b.Log.WriteMainEntry(fmt.Sprintf("Pushing%s", tag))
 
 	// Push from within a container with $HOME mounted.
 	args := []string{"docker", "run",
