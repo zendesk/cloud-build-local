@@ -58,7 +58,7 @@ func (v *Volume) getHelperContainer(ctx context.Context) (string, error) {
 	defer v.mu.Unlock()
 	if !v.createdHelper {
 		volume := fmt.Sprintf("%s:%s", v.name, workspaceDir)
-		cmd := []string{"docker", "run", "-v", volume, "--name", v.helper, "busybox"}
+		cmd := []string{"docker", "run", "-v", volume, "--name", v.helper, "gcr.io/docker-images-180022/busybox"}
 		if err := v.runner.Run(ctx, cmd, nil, nil, nil, ""); err != nil {
 			return "", err
 		}
