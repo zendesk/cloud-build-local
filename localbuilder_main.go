@@ -35,13 +35,14 @@ import (
 
 	"cloud-build-local/build"
 
-	"github.com/GoogleCloudPlatform/cloud-build-local/common"
-	"github.com/GoogleCloudPlatform/cloud-build-local/config"
+	"cloud-build-local/common"
+	"cloud-build-local/config"
+	"cloud-build-local/volume"
+
 	"github.com/GoogleCloudPlatform/cloud-build-local/gcloud"
 	"github.com/GoogleCloudPlatform/cloud-build-local/metadata"
 	"github.com/GoogleCloudPlatform/cloud-build-local/runner"
 	"github.com/GoogleCloudPlatform/cloud-build-local/validate"
-	"github.com/GoogleCloudPlatform/cloud-build-local/volume"
 )
 
 const (

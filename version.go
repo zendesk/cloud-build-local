@@ -14,4 +14,4 @@
 
 package main
 
-const version = "zendesk HEAD"
+const version = "zendesk v0.100.3"
