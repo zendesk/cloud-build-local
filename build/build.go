@@ -37,11 +37,12 @@ import (
 	"github.com/golang/protobuf/ptypes"
 	pb "google.golang.org/genproto/googleapis/devtools/cloudbuild/v1"
 
-	"github.com/GoogleCloudPlatform/cloud-build-local/common"
-	"github.com/GoogleCloudPlatform/cloud-build-local/gsutil"
-	"github.com/GoogleCloudPlatform/cloud-build-local/logger"
-	"github.com/GoogleCloudPlatform/cloud-build-local/runner"
-	"github.com/GoogleCloudPlatform/cloud-build-local/volume"
+	"cloud-build-local/common"
+	"cloud-build-local/gsutil"
+	"cloud-build-local/logger"
+	"cloud-build-local/runner"
+	"cloud-build-local/volume"
+
 	"github.com/pborman/uuid"
 	"github.com/spf13/afero"
 	"golang.org/x/oauth2"
